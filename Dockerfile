@@ -15,5 +15,7 @@ RUN apt-get update && apt-get install -y sqlite3 --no-install-recommends && rm -
 
 COPY . /usr/src/app
 
+RUN rake db:setup
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :foods
   resources :books
   root 'users#index'
   resources :users

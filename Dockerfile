@@ -15,5 +15,7 @@ RUN apt-get update && apt-get install -y mysql-client --no-install-recommends &&
 
 COPY . /usr/src/app
 
+RUN bundle exec rake assets:precompile
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
